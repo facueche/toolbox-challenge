@@ -7,11 +7,6 @@ class Line
         this.assertHexIsValid(hex);
     }
 
-    static make(text, number, hex)
-    {
-        return new Line(text, number, hex);
-    }
-
     assertTextIsValid(text)
     {
         if (!text instanceof String || text == "" || text === undefined)
@@ -38,6 +33,11 @@ class Line
             throw new Error("Hex should have 32 characters");
 
         this.hex = hex;
+    }
+
+    static make(text, number, hex)
+    {
+        return new Line(text, number, hex);
     }
 }
 
