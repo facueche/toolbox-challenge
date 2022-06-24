@@ -2,8 +2,8 @@ const { expect, assert } = require('chai');
 const Line = require('../src/core/domain/line.js');
 
 describe('Line creation', function () {
-    it('Text is require', function() {
-        let tempLine = {...line};
+    it('Text is require', function () {
+        let tempLine = { ...line };
         tempLine.text = "";
         let lineWithoutText = tempLine;
 
@@ -14,8 +14,8 @@ describe('Line creation', function () {
         expect(() => Line.make(lineWithoutText.text, lineWithoutText.number, lineWithoutText.hex)).to.throw('Text is required');
     });
 
-    it('Number is required', function() {
-        let tempLine = {...line};
+    it('Number is required', function () {
+        let tempLine = { ...line };
         tempLine.number = "not_number";
         let lineWithoutNumber = tempLine;
 
@@ -26,8 +26,8 @@ describe('Line creation', function () {
         expect(() => Line.make(lineWithoutNumber.text, lineWithoutNumber.number, lineWithoutNumber.hex)).to.throw('Number is required');
     });
 
-    it('Hex is required', function() {
-        let tempLine = {...line};
+    it('Hex is required', function () {
+        let tempLine = { ...line };
         tempLine.hex = "";
         let lineWithoutHex = tempLine;
 
@@ -38,8 +38,8 @@ describe('Line creation', function () {
         expect(() => Line.make(lineWithoutHex.text, lineWithoutHex.number, lineWithoutHex.hex)).to.throw('Hex is required');
     });
 
-    it('Hex should have 32 characters', function() {
-        let tempLine = {...line};
+    it('Hex should have 32 characters', function () {
+        let tempLine = { ...line };
         tempLine.hex = "less than 32";
         let lineWithoutHex = tempLine;
 
@@ -50,7 +50,7 @@ describe('Line creation', function () {
         expect(() => Line.make(lineWithoutHex.text, lineWithoutHex.number, lineWithoutHex.hex)).to.throw('Hex should have 32 characters');
     });
 
-    it('Line should be created with correct data', function() {
+    it('Line should be created with correct data', function () {
         const newLine = new Line(line.text, line.number, line.hex);
         expect(newLine).to.have.own.property('text');
         assert.equal(newLine.text, line.text);
