@@ -1,0 +1,14 @@
+{
+  "name": "toolbox-challange",
+  "version": "0.0.1",
+  "description": "API for Toolbox challange",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Facu Echenique",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
