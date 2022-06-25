@@ -1,6 +1,6 @@
 const { expect, assert } = require('chai');
-const File = require('../src/core/domain/file.js');
-const Line = require('../src/core/domain/line.js');
+const File = require('../../src/core/domain/models/file.js');
+const Line = require('../../src/core/domain/models/line.js');
 
 describe('File creation', function () {
     it('Filename is required', function () {

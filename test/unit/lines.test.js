@@ -1,5 +1,5 @@
 const { expect, assert } = require('chai');
-const Line = require('../src/core/domain/line.js');
+const Line = require('../../src/core/domain/models/line.js');
 
 describe('Line creation', function () {
     it('Text is require', function () {
