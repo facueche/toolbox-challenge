@@ -10,6 +10,7 @@ const fetchFiles = async () => {
             const line = new Line(lineRaw.text, lineRaw.number, lineRaw.hex);
             file.addLine(line);
         })
+        return file;
     });
 }
 
