@@ -17,22 +17,24 @@ const fetchFiles = async () => {
         if (response.status !== 200)
             throw new Error(jsonResponse.message);
 
-        const files = await Promise.all(jsonResponse.files.map(async (filename) => {
-            const file = new File(filename);
-
-            try {
-                await fetchFileLinesAndPush(filename, file);
-            } catch (error) {
-                // Just skip
-            }
-
-            return file;
-        }))
+        const files = await Promise.all(jsonResponse.files.map(fetchFileByFileName));
 
         return files;
     } catch (error) {
         throw new Error(error.message);
     }
+}
+
+const fetchFileByFileName = async (filename) => {
+    const file = new File(filename);
+
+    try {
+        await fetchFileLinesAndPush(filename, file);
+    } catch (error) {
+        // Just skip
+    }
+
+    return file;
 }
 
 const fetchFileLinesAndPush = async (filename, file) => {
@@ -67,5 +69,6 @@ const fetchFileLinesAndPush = async (filename, file) => {
 }
 
 module.exports = {
-    fetchFiles
+    fetchFiles,
+    fetchFileByFileName
 };
