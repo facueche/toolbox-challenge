@@ -1,0 +1,27 @@
+[
+    {
+        "file": "file1.csv",
+        "lines": [
+            {
+                "text": "RgTya",
+                "number": 64075909,
+                "hex": "70ad29aacf0b690b0467fe2b2767f765"
+            },
+            {
+                "text": "RgTyb",
+                "number": 64075900,
+                "hex": "70ad29aacf0b690b0467fe2b2767f766"
+            }
+        ]
+    },
+    {
+        "file": "file2.csv",
+        "lines": [
+            {
+                "text": "RgTyc",
+                "number": 64075901,
+                "hex": "70ad29aacf0b690b0467fe2b2767f767"
+            }
+        ]
+    }
+]

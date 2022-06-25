@@ -4,16 +4,19 @@
   "description": "API for Toolbox challange",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "mocha"
+    "start": "nodemon src/index.js",
+    "test": "env APP_ENV=test PORT=3001 mocha ./test/*"
   },
   "author": "Facu Echenique",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "chai": "^4.3.6",
-    "mocha": "^10.0.0"
+    "chai-http": "^4.3.0",
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.18"
   }
 }

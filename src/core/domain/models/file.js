@@ -11,7 +11,7 @@ class File
         if(!filename instanceof String || filename == "" || filename === undefined)
             throw new Error("Filename is required");
 
-        this.filename = filename;
+        this.file = filename;
     }
 
     static make(filename)
