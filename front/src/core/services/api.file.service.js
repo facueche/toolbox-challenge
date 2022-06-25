@@ -1,6 +1,16 @@
 export const getFiles = async () => {
+    const url = "http://localhost:3000/files/data";
+    return await fetchFiles(url);
+}
+
+export const searchFileByFileName = async (filename) => {
+    const url = `http://localhost:3000/files/data?fileName=${filename}`
+    return await fetchFiles(url);
+}
+
+const fetchFiles = async (url) => {
     try {
-        const response = await fetch("http://localhost:3000/files/data", {
+        const response = await fetch(url, {
             headers: {
                 Accept: "application/json",
             }
