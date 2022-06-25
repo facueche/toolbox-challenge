@@ -1,0 +1,32 @@
+version: "3.4"
+
+services:
+  api-express:
+    restart: always
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: api-files
+    environment:
+      PORT: 3000
+    ports:
+      - 3000:3000
+    networks:
+      - files-network
+
+  app-react:
+    restart: always
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    container_name: app-files
+    environment:
+      PORT: 3001
+    ports:
+      - 3001:3001
+    networks:
+      - files-network
+
+networks:
+  files-network:
+    driver: bridge
